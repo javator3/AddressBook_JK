@@ -63,10 +63,10 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <TableView layoutY="14.0" prefHeight="372.8" prefWidth="234.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="personTableView" layoutY="14.0" prefHeight="372.8" prefWidth="234.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Name" />
-                            <TableColumn prefWidth="127.99996948242188" text="Last Name" />
+                            <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
+                            <TableColumn fx:id="lastNameCol" prefWidth="127.99996948242188" text="Last Name" />
                           </columns>
                         </TableView>
                      </children>
@@ -149,10 +149,10 @@
                               </Label>
                            </children>
                         </GridPane>
-                        <Button layoutX="29.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="New" />
-                        <Button layoutX="126.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Edit" />
-                        <Button layoutX="221.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Delete" />
-                        <Button layoutX="316.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Save" />
+                        <Button fx:id="newPerson" layoutX="29.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="New" />
+                        <Button fx:id="editPerson" layoutX="126.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Edit" />
+                        <Button fx:id="deletePerson" layoutX="221.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Delete" />
+                        <Button fx:id="save" layoutX="316.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Save" />
                      </children>
                   </AnchorPane>
               </items>
