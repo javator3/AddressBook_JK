@@ -1,5 +1,6 @@
 package pl.sda.addressbook.contoler;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -7,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import pl.sda.addressbook.model.Person;
+import pl.sda.addressbook.view.PersonView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -52,9 +54,24 @@ public class RootControler implements Initializable{
     @FXML
     private TableColumn<Person, String> lastNameCol;
 
+    private PersonView personView;
+
+    public void setPersonView(PersonView personView){
+        this.personView = personView;
+        personTableView.setItems(personView.getPersonList());
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        nameCol.setCellValueFactory(c -> c.getValue().nameProperty());
+        lastNameCol.setCellValueFactory(c -> c.getValue().lastnameProperty());
+
+    }
+
+    public void addNewPerson(ActionEvent actionEvent) throws Exception {
+        PersonView personView = new PersonView(actionEvent);
+        personView.loadNewPersonView();
 
     }
 }

@@ -18,9 +18,9 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.sda.addressbook.contoler.RootControler">
   <children>
-    <MenuBar VBox.vgrow="NEVER">
+    <MenuBar VBox.vgrow="NEVER" style="-fx-background-color: #857F74;">
       <menus>
-        <Menu mnemonicParsing="false" text="File">
+        <Menu mnemonicParsing="false" text="File" >
           <items>
             <MenuItem mnemonicParsing="false" text="New" />
             <MenuItem mnemonicParsing="false" text="Open…" />
@@ -57,7 +57,7 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" >
          <children>
             <SplitPane dividerPositions="0.33072100313479624" layoutX="194.0" layoutY="48.0" prefHeight="374.4" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <items>
@@ -71,7 +71,7 @@
                         </TableView>
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #CADF9E;">
                      <children>
                         <GridPane layoutY="2.0" prefHeight="290.0" prefWidth="392.0">
                           <columnConstraints>
@@ -149,10 +149,10 @@
                               </Label>
                            </children>
                         </GridPane>
-                        <Button fx:id="newPerson" layoutX="29.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="New" />
-                        <Button fx:id="editPerson" layoutX="126.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Edit" />
-                        <Button fx:id="deletePerson" layoutX="221.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Delete" />
-                        <Button fx:id="save" layoutX="316.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Save" />
+                        <Button fx:id="newPerson" layoutX="29.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="New" style="-fx-background-color: #A4AC96;" onAction="#addNewPerson"/>
+                        <Button fx:id="editPerson" layoutX="126.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Edit" style="-fx-background-color: #A4AC96;"/>
+                        <Button fx:id="deletePerson" layoutX="221.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Delete" style="-fx-background-color: #A4AC96;"/>
+                        <Button fx:id="save" layoutX="316.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Save" style="-fx-background-color: #A4AC96;"/>
                      </children>
                   </AnchorPane>
               </items>
