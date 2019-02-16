@@ -70,8 +70,7 @@ public class RootControler implements Initializable{
     }
 
     public void addNewPerson(ActionEvent actionEvent) throws Exception {
-        PersonView personView = new PersonView(actionEvent);
-        personView.loadNewPersonView();
+      personView.loadNewPersonView();
 
     }
 }

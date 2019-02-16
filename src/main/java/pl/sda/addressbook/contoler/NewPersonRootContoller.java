@@ -1,9 +1,12 @@
 package pl.sda.addressbook.contoler;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import pl.sda.addressbook.model.Person;
+import pl.sda.addressbook.view.PersonView;
 
 
 import java.net.URL;
@@ -35,8 +38,21 @@ public class NewPersonRootContoller implements Initializable {
     @FXML
     private Button cancelButton;
 
+    private PersonView personView;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+
+    public void savePerson(ActionEvent actionEvent) {
+
+        personView.getPersonList().add(new Person(nameTextField.getText(), lastNameTextField.getText(), streetTextField.getText(), cityTextField.getText(), zipTextField.getText(), phoneTextField.getText()));
+
+    }
+
+    public void setPersonView(PersonView personView) {
+        this.personView = personView;
     }
 }

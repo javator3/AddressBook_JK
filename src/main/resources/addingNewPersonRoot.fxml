@@ -93,7 +93,7 @@
             </GridPane>
             <ButtonBar layoutX="35.0" layoutY="309.0" prefHeight="40.0" prefWidth="564.0">
               <buttons>
-                <Button fx:id="saveButton" mnemonicParsing="false" text="Save" style="-fx-background-color: #A4AC96;"/>
+                <Button fx:id="saveButton" mnemonicParsing="false" text="Save" style="-fx-background-color: #A4AC96;" onAction="#savePerson"/>
                   <Button fx:id="cancelButton" mnemonicParsing="false" text="Cancel" style="-fx-background-color: #A4AC96;"/>
               </buttons>
             </ButtonBar>
