@@ -89,12 +89,19 @@ public class PersonView {
 
         Stage stage2 = new Stage();
 
-        stage2.setTitle("Add New Person");
+        stage2.setTitle("Add/Edit New Person");
         stage2.setScene(new Scene(parent, 640, 400));
         stage2.show();
 
         NewPersonRootContoller newPersonRootContoller = loader.getController();
         newPersonRootContoller.setPersonView(this);
+
+    }
+
+    public void loadPersonEdit(Person person, int index){
+
+//        loadNewPersonView();
+
 
     }
 
