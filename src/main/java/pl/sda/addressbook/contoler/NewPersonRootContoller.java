@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import pl.sda.addressbook.model.Person;
 import pl.sda.addressbook.view.PersonView;
 
@@ -44,6 +45,11 @@ public class NewPersonRootContoller implements Initializable {
 
         personView.getPersonList().add(new Person(nameTextField.getText(), lastNameTextField.getText(), streetTextField.getText(), cityTextField.getText(), zipTextField.getText(), phoneTextField.getText()));
 
+    }
+
+    public void closeWindow(ActionEvent actionEvent){
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
     }
 
     public void setPersonView(PersonView personView) {

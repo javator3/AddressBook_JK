@@ -93,4 +93,8 @@ public class RootControler implements Initializable{
 
     }
 
+    public void deleteMarkedPerson(){
+
+    }
+
 }
