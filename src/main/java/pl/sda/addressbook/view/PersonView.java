@@ -1,5 +1,6 @@
 package pl.sda.addressbook.view;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,8 +12,13 @@ import javafx.stage.Stage;
 import pl.sda.addressbook.contoler.NewPersonRootContoller;
 import pl.sda.addressbook.contoler.RootControler;
 import pl.sda.addressbook.model.Person;
+import pl.sda.addressbook.model.PersonString;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class PersonView {
 
@@ -23,12 +29,29 @@ public class PersonView {
     public PersonView(){}
     public PersonView(Stage stage) {
         this.stage = stage;
-        personList.add(new Person("Anita", "Kowalska", "Pierwsza", "Duże", "80-900", "123456789"));
+        /*personList.add(new Person("Anita", "Kowalska", "Pierwsza", "Duże", "80-900", "123456789"));
         personList.add(new Person("Banita", "Biały", "Druga", "Sredne", "60-100", "987654321"));
         personList.add(new Person("Czesiu", "Niemen", "Trzecia", "Małe", "70-200", ""));
         personList.add(new Person("Zuzia", "Nieduża", "Czwarta", "Duże", "48-900", "654789321"));
-        personList.add(new Person("Alica", "Sajko", "Piąta", "Małe", "70-200", "456321789"));
+        personList.add(new Person("Alica", "Sajko", "Piąta", "Małe", "70-200", "456321789"));*/
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        File file = new File("currentAddressList");
+
+        PersonString[] person = null;
+
+        try {
+            person = objectMapper.readValue(file, PersonString[].class);
+            for (PersonString e: person) {
+                personList.add(new Person(e.getName(), e.getLastname(), e.getStreet(), e.getCity(), e.getZipCode(), e.getTelephone()));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+
+
 
     public ObservableList<Person> getPersonList() {
         return personList;
