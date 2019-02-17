@@ -119,7 +119,7 @@ public class PersonView {
 
         EditPersonController editPersonController = loader.getController();
         editPersonController.setPerson(person);
-//        editPersonController.deletePerson(index);
+        editPersonController.setIndex(index);
         editPersonController.setPersonView(this);
 
     }

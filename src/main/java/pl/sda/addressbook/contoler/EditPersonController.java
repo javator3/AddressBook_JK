@@ -13,7 +13,7 @@ import pl.sda.addressbook.view.PersonView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EditPersonController implements Initializable{
+public class EditPersonController implements Initializable {
 
     @FXML
     private TextField nameTextField;
@@ -40,6 +40,8 @@ public class EditPersonController implements Initializable{
     private Button cancelButton;
 
     private PersonView personView;
+    private int index;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -47,12 +49,20 @@ public class EditPersonController implements Initializable{
 
     public void savePerson(ActionEvent actionEvent) {
 
-        personView.getPersonList().add(new Person(nameTextField.getText(), lastNameTextField.getText(), streetTextField.getText(), cityTextField.getText(), zipTextField.getText(), phoneTextField.getText()));
+        Person person = personView.getPersonList().get(index);
+        person.setName(nameTextField.getText());
+        person.setLastname(lastNameTextField.getText());
+        person.setStreet(streetTextField.getText());
+        person.setCity(cityTextField.getText());
+        person.setZipCode(zipTextField.getText());
+        person.setTelephone(phoneTextField.getText());
+
         Stage stage = (Stage) saveButton.getScene().getWindow();
         stage.close();
+
     }
 
-    public void closeWindow(ActionEvent actionEvent){
+    public void closeWindow(ActionEvent actionEvent) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
@@ -71,7 +81,7 @@ public class EditPersonController implements Initializable{
         phoneTextField.setText(person.getTelephone());
     }
 
-    public void deletePerson(int index) {
-        personView.getPersonList().remove(index);
+    public void setIndex(int index) {
+        this.index = index;
     }
 }

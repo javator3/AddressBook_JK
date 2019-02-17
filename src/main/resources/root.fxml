@@ -68,9 +68,6 @@
                             <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name"/>
                             <TableColumn fx:id="lastNameCol" prefWidth="127.99996948242188" text="Last Name" />
                           </columns>
-                            <sortOrder>
-                                <fx:reference source="nameCol"/>
-                            </sortOrder>
                         </TableView>
                      </children>
                   </AnchorPane>
