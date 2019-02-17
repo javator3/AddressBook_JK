@@ -1,5 +1,7 @@
 package pl.sda.addressbook.contoler;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,7 +12,11 @@ import javafx.scene.control.TableView;
 import pl.sda.addressbook.model.Person;
 import pl.sda.addressbook.view.PersonView;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class RootControler implements Initializable{
@@ -73,4 +79,18 @@ public class RootControler implements Initializable{
       personView.loadNewPersonView();
 
     }
+
+    public void saveListToJSON(ActionEvent actionEvent){
+
+        ObjectMapper mapper = new ObjectMapper();
+        File file = new File("currentAddressList");
+
+        try {
+            mapper.writeValue(file, personView.getPersonList());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }

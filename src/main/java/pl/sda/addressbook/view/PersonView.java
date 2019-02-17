@@ -23,11 +23,11 @@ public class PersonView {
     public PersonView(){}
     public PersonView(Stage stage) {
         this.stage = stage;
-        personList.add(new Person("A", "AAA", "", "", "", ""));
-        personList.add(new Person("B", "BBB", "", "", "", ""));
-        personList.add(new Person("C", "CCC", "", "", "", ""));
-        personList.add(new Person("D", "DDD", "", "", "", ""));
-        personList.add(new Person("E", "EEE", "", "", "", ""));
+        personList.add(new Person("Anita", "Kowalska", "Pierwsza", "Duże", "80-900", "123456789"));
+        personList.add(new Person("Banita", "Biały", "Druga", "Sredne", "60-100", "987654321"));
+        personList.add(new Person("Czesiu", "Niemen", "Trzecia", "Małe", "70-200", ""));
+        personList.add(new Person("Zuzia", "Nieduża", "Czwarta", "Duże", "48-900", "654789321"));
+        personList.add(new Person("Alica", "Sajko", "Piąta", "Małe", "70-200", "456321789"));
     }
 
     public ObservableList<Person> getPersonList() {

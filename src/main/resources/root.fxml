@@ -152,7 +152,7 @@
                         <Button fx:id="newPerson" layoutX="29.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="New" style="-fx-background-color: #A4AC96;" onAction="#addNewPerson"/>
                         <Button fx:id="editPerson" layoutX="126.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Edit" style="-fx-background-color: #A4AC96;"/>
                         <Button fx:id="deletePerson" layoutX="221.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Delete" style="-fx-background-color: #A4AC96;"/>
-                        <Button fx:id="save" layoutX="316.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Save" style="-fx-background-color: #A4AC96;"/>
+                        <Button fx:id="save" layoutX="316.0" layoutY="318.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Save" style="-fx-background-color: #A4AC96;" onAction="#saveListToJSON"/>
                      </children>
                   </AnchorPane>
               </items>

@@ -40,12 +40,6 @@ public class NewPersonRootContoller implements Initializable {
 
     private PersonView personView;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
-
-
     public void savePerson(ActionEvent actionEvent) {
 
         personView.getPersonList().add(new Person(nameTextField.getText(), lastNameTextField.getText(), streetTextField.getText(), cityTextField.getText(), zipTextField.getText(), phoneTextField.getText()));
@@ -55,4 +49,10 @@ public class NewPersonRootContoller implements Initializable {
     public void setPersonView(PersonView personView) {
         this.personView = personView;
     }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
 }
