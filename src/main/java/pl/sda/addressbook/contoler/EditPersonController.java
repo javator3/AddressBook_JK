@@ -13,7 +13,7 @@ import pl.sda.addressbook.view.PersonView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NewPersonRootContoller implements Initializable {
+public class EditPersonController implements Initializable{
 
     @FXML
     private TextField nameTextField;
@@ -40,11 +40,16 @@ public class NewPersonRootContoller implements Initializable {
     private Button cancelButton;
 
     private PersonView personView;
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 
     public void savePerson(ActionEvent actionEvent) {
 
         personView.getPersonList().add(new Person(nameTextField.getText(), lastNameTextField.getText(), streetTextField.getText(), cityTextField.getText(), zipTextField.getText(), phoneTextField.getText()));
-
+        Stage stage = (Stage) saveButton.getScene().getWindow();
+        stage.close();
     }
 
     public void closeWindow(ActionEvent actionEvent){
@@ -56,9 +61,17 @@ public class NewPersonRootContoller implements Initializable {
         this.personView = personView;
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+
+    public void setPerson(Person person) {
+        nameTextField.setText(person.getName());
+        lastNameTextField.setText(person.getLastname());
+        streetTextField.setText(person.getStreet());
+        cityTextField.setText(person.getCity());
+        zipTextField.setText(person.getZipCode());
+        phoneTextField.setText(person.getTelephone());
     }
 
-
+    public void deletePerson(int index) {
+        personView.getPersonList().remove(index);
+    }
 }

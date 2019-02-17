@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pl.sda.addressbook.contoler.EditPersonController;
 import pl.sda.addressbook.contoler.NewPersonRootContoller;
 import pl.sda.addressbook.contoler.RootControler;
 import pl.sda.addressbook.model.Person;
@@ -100,9 +101,26 @@ public class PersonView {
 
     public void loadPersonEdit(Person person, int index){
 
-//        loadNewPersonView();
+        FXMLLoader loader =  new FXMLLoader();
+        loader.setLocation(getClass().getResource("/editingPersonRoot.fxml"));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Parent parent = loader.getRoot();
 
+        Stage stage2 = new Stage();
+
+        stage2.setTitle("Edit New Person");
+        stage2.setScene(new Scene(parent, 640, 400));
+        stage2.show();
+
+
+        EditPersonController editPersonController = loader.getController();
+        editPersonController.setPerson(person);
+//        editPersonController.deletePerson(index);
+        editPersonController.setPersonView(this);
 
     }
-
 }
