@@ -83,7 +83,7 @@ public class RootControler implements Initializable{
     public void saveListToJSON(ActionEvent actionEvent){
 
         ObjectMapper mapper = new ObjectMapper();
-        File file = new File("currentAddressList");
+        File file = new File("currentAddressList.json");
 
         try {
             mapper.writeValue(file, personView.getPersonList());

@@ -36,7 +36,7 @@ public class PersonView {
         personList.add(new Person("Alica", "Sajko", "Piąta", "Małe", "70-200", "456321789"));*/
 
         ObjectMapper objectMapper = new ObjectMapper();
-        File file = new File("currentAddressList");
+        File file = new File("currentAddressList.json");
 
         PersonString[] person = null;
 

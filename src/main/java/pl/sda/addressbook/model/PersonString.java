@@ -1,9 +1,15 @@
 package pl.sda.addressbook.model;
 
 import javafx.beans.property.StringProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Objects;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class PersonString {
 
 
@@ -13,17 +19,6 @@ public class PersonString {
     private String city;
     private String zipCode;
     private String telephone;
-
-    public PersonString(){}
-
-    public PersonString(String name, String lastname, String street, String city, String zipCode, String telephone) {
-        this.name = name;
-        this.lastname = lastname;
-        this.street = street;
-        this.city = city;
-        this.zipCode = zipCode;
-        this.telephone = telephone;
-    }
 
     @Override
     public String toString() {
@@ -55,51 +50,5 @@ public class PersonString {
         return Objects.hash(name, lastname, street, city, zipCode, telephone);
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getZipCode() {
-        return zipCode;
-    }
-
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
 }
